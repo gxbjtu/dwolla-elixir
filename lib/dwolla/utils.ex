@@ -226,6 +226,9 @@ defmodule Dwolla.Utils do
     |> to_snake_case()
     |> Poison.Decode.decode(as: %Dwolla.Document{})
   end
+  defp map_body(_body, :empty) do
+    nil
+  end
 
   defp get_transfer_source_from_body(%{"_links" => %{"source" => %{"href" => url}}} = _body) do
     url
