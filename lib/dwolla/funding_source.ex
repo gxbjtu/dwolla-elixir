@@ -12,7 +12,8 @@ defmodule Dwolla.FundingSource do
             status: nil,
             type: nil,
             channels: [],
-            bank_name: nil
+            bank_name: nil,
+            bank_account_type: nil
 
   @type t :: %__MODULE__{
           id: String.t(),
@@ -24,7 +25,8 @@ defmodule Dwolla.FundingSource do
           # "bank" | "balance"
           type: String.t(),
           channels: [String.t()],
-          bank_name: String.t()
+          bank_name: String.t(),
+          bank_account_type: String.t()
         }
   @type token :: String.t()
   @type id :: String.t()
